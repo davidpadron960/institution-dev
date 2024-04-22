@@ -6,6 +6,8 @@ from django.core.validators import MinLengthValidator
 class Base(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
+    mision = models.TextField()
+    vision = models.TextField()
     address = models.CharField(max_length=100)
     telephone_number = models.CharField(max_length=20)
     active = models.BooleanField(default=True)
