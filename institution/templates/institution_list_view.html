@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block contend %}
+     <!-- Packages Start -->
+<!-- Packages Start -->
+<div class="container" style="padding-top: 25px;">
+    <div class="row">
+        {% for inst in institution %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{{inst.image.url}}" alt="{{inst.name}}">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3">
+                        <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{inst.address}}</small>
+                    </div>
+                    <a class="h5 text-decoration-none" href="{% url 'institution_detail_view' pk=inst.pk %}">{{inst.name}}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- Packages End -->
+
+{% endblock %}

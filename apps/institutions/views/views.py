@@ -9,7 +9,7 @@ def institution_list(request):
         'institution' : institution,
     }
 
-    return render(request,'institution_list.html',context)
+    return render(request,'institution_list_view.html',context)
 
 def institution_detail(request,pk):
     institution = Institution.objects.filter(
@@ -24,6 +24,6 @@ def institution_detail(request,pk):
         'services':services,
     }
 
-    return render(request,'institution_detail.html',context)
+    return render(request,'institution_detail_view.html',context)
 
 
